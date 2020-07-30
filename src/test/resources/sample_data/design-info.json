@@ -1,0 +1,17 @@
+{
+  "sampleData": {
+    "f7a70184-f55b-48ee-a10d-88b9f0c6228e": {
+      "payload": "sample_data/list_order.dwl"
+    },
+    "e3ea5918-2c07-402e-9b6b-4bdd66afec7a": {
+      "payload": "sample_data/list_Order_1.dwl",
+      "vars-service_identifier": "sample_data/unknown.dwl",
+      "vars-ordersDetails": "sample_data/list_json.json",
+      "vars-order_id": "sample_data/defaultstringtype.dwl",
+      "vars-phone_number_okta": "sample_data/defaultnulltype.json"
+    },
+    "e192e025-36f0-4249-bd17-528e918819e4": {
+      "vars-ordersDetails": "sample_data/list_json_1.json"
+    }
+  }
+}
