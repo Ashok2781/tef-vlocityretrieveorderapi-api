@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config
+		name="tef-vlocityretrieveorderapi-api-test-suite.xml" />
+	<munit:test name="tef-vlocityretrieveorderapi-api-test-suite-get:\users\(user_id)\orders:tef-vlocityretrieveorderapi-api-configTest" doc:id="b56fc285-c4c4-4713-9f74-bae021269ee3" description="Test">
+		 
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="bb399304-1398-4809-ab22-ba2bb24acf9a" >
+				<munit:attributes value="#[{uriParams : {'user_id' : '0013t00001XIKJ6AAP'}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to get:\users\(user_id)\orders:tef-vlocityretrieveorderapi-api-config" doc:id="79839969-5d4d-42b4-afef-34701f238fcb" name="get:\users\(user_id)\orders:tef-vlocityretrieveorderapi-api-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call" doc:id="878efe99-5c33-4400-9ef6-6932cc63f47e" processor="salesforce:query" atLeast="1">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Query" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="Salesforce_Config" attributeName="config-ref" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<!-- <munit:test name="tef-vlocityretrieveorderapi-api-test-suite-get:\users\(user_id)\phone-numbers\(phone_number)\orders:tef-vlocityretrieveorderapi-api-configTest" doc:id="f4735faf-802c-46e6-b806-a1c30870174a" description="Test">
+		
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="4116d85b-b902-480a-b4cd-29691efd8d50" >
+				<munit:attributes value="#[{uriParams : {'user_id' : '0013t00001XIKJ6AAP','phone_number':'9433680414'}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to get:\users\(user_id)\phone-numbers\(phone_number)\orders:tef-vlocityretrieveorderapi-api-config" doc:id="b67564bd-a19a-457d-9b2f-3f489bf9866b" name="get:\users\(user_id)\phone-numbers\(phone_number)\orders:tef-vlocityretrieveorderapi-api-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call" doc:id="c91b89f4-f62c-437c-b6f2-d48085999b77" processor="salesforce:query" atLeast="1">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Query" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="Salesforce_Config" attributeName="config-ref" />
+				</munit-tools:with-attributes>
+				
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="tef-vlocityretrieveorderapi-api-test-suite-get:\users\(user_id)\orders\(order_id):tef-vlocityretrieveorderapi-api-configTest" doc:id="00b1b02b-8658-40bc-ab8b-77838612ca41" description="Test">
+		
+		<munit:execution>
+		<munit:set-event doc:name="Set Event" doc:id="34150ec7-fb55-4252-8cbc-6d689e245551" >
+				<munit:attributes value="#[{uriParams : {'user_id' : '0013t00001XIKJ6AAP','order_id':'8013t0000016JedAAE'}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref toget:\users\(user_id)\orders\(order_id):tef-vlocityretrieveorderapi-api-config" doc:id="62631603-0771-477d-8e63-ba1911c4140c" name="get:\users\(user_id)\orders\(order_id):tef-vlocityretrieveorderapi-api-config"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="0a6cbcae-7fd9-4f58-bfda-312e4dce15d6" processor="salesforce:query">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Query" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="Salesforce_Config" attributeName="config-ref" />
+				</munit-tools:with-attributes>
+				
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test> 
+ -->
+
+</mule>
